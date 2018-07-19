@@ -1,4 +1,6 @@
-
+# Easy 2, no.3 Beer Song
+# https://launchschool.com/exercises/0146ea42
+# My discussion on forums: https://launchschool.com/posts/c074822c#reply
 
 class BeerSong
 
@@ -23,13 +25,17 @@ class BeerSong
   end
 
   def verses(start_at, end_at)
-    result = ''
-    start_at.upto(end_at) {|i| result += verse(i) }
-    result
+    result = []
+    start_at.downto(end_at) {|i| result << verse(i) }  # call #verse method just above
+    result.join("\n")
   end
 
   def lyrics  # returns the whole song lyrics
+    verses(99, 0)  # call #verses method just above
+  end
+end
 
+=begin
   # replace this with verses(99, 0) function run
     song = <<-SONG
 99 bottles of beer on the wall, 99 bottles of beer.
@@ -334,4 +340,4 @@ Go to the store and buy some more, 99 bottles of beer on the wall.
     SONG
   song
   end
-end
+=end
